@@ -15,7 +15,7 @@ public class SuperHumansShellComponent {
         this.superHeroService = superHeroService;
     }
 
-    //TODO create_super_hero {"name":"Писючкин","description_super_power":"Пися становится больше","count_save_human":20}
+    //TODO create_super_hero '{"name":"Писючкин","description_super_power":"Пися становится больше","count_save_human":20}'
     @Command(command = "create_super_hero")
     public String createSuperHero(@Option(longNames = "json", required = true) String jsonInputToText) {
         try {
@@ -25,5 +25,10 @@ public class SuperHumansShellComponent {
         } catch (Exception ex) {
             return ex.getMessage();
         }
+    }
+
+    @Command(command = "get_list_all_superhero")
+    public String getListAllSuperHero() {
+        return superHeroService.getSuperHeroList().toString();
     }
 }

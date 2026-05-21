@@ -1,3 +1,11 @@
 1779383569992:create_super_hero {"name":"Писючкин","description_super_power":"Пися становится больше","count_save_human":20}
 1779384254998:create_super_hero --json {"name":"Писючкин","description_super_power":"Пися становится больше","count_save_human":20}
 1779384415932:create_super_hero --json '{"name":"Писючкин","description_super_power":"Пися становится больше","count_save_human":20}'
+1779384672954:create_super_hero {"name":"Писючкин","description_super_power":"Пися становится больше","count_save_human":20}
+1779385406841:create_super_hero {"name":"Кака","description_super_power":"Пися становится больше","count_save_human":20}
+1779385411654:get_list_all_superhero
+1779385543789:create_super_hero {"name":"Писючкин","description_super_power":"Пися становится больше","count_save_human":20}
+1779386372945:create_super_hero --json {"name":"Писючкин","description_super_power":"Пися становится больше","count_save_human":20}
+1779386732224:create_super_hero {"name":"Писючкин","description_super_power":"Пися становится больше","count_save_human":20}
+1779386940243:create_super_hero '{"name":"Писючкин","description_super_power":"Пися становится больше","count_save_human":20}'
+1779387000101:get_list_all_superhero

@@ -16,9 +16,12 @@ public class SuperHeroService {
 
     public SuperHeroDto addSuperHero(String jsonInputToText) {
         try {
+            System.out.println("Service: " + jsonInputToText);
             Map<String, Object> map = objectMapper.readValue(jsonInputToText, Map.class);
             String mapToText = objectMapper.writeValueAsString(map);
             SuperHero superHero = objectMapper.readValue(mapToText, SuperHero.class);
+            System.out.println("SuperHero:" + superHero);
+            superHeroList.add(superHero);
             return mapperFromSuperHeroToSuperHeroDto(superHero);
         } catch (Exception ex) {
             return new SuperHeroDto();
@@ -31,5 +34,9 @@ public class SuperHeroService {
         superHeroDto.setDescription_super_power(superHero.getDescription_super_power());
         superHeroDto.setCount_save_human(superHero.getCount_save_human());
         return superHeroDto;
+    }
+
+    public List<SuperHero> getSuperHeroList() {
+        return superHeroList;
     }
 }
