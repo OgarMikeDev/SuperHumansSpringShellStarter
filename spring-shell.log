@@ -9,3 +9,4 @@
 1779386732224:create_super_hero {"name":"Писючкин","description_super_power":"Пися становится больше","count_save_human":20}
 1779386940243:create_super_hero '{"name":"Писючкин","description_super_power":"Пися становится больше","count_save_human":20}'
 1779387000101:get_list_all_superhero
+1781093805993:create_super_hero '{"name":"Писючкин","description_super_power":"Пися становится больше","count_save_human":20}'
