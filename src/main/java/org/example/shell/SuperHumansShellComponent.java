@@ -26,6 +26,7 @@ public class SuperHumansShellComponent {
         }
     }
 
+    //TODO update_super_hero --name Писючкин --json '{"description_super_power" : "Вырастает третья пися"}'
     //TODO update_super_hero Писючкин '{"description_super_power" : "Вырастает вторая пися"}'
     @Command(command = "update_super_hero")
     public String updateSuperHero(@Option(longNames = "name", required = true) String name,
