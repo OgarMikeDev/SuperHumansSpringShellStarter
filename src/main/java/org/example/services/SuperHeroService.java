@@ -5,9 +5,7 @@ import org.example.dto.SuperHeroDto;
 import org.example.model.SuperHero;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class SuperHeroService {
@@ -23,6 +21,34 @@ public class SuperHeroService {
             System.out.println("SuperHero:" + superHero);
             superHeroList.add(superHero);
             return mapperFromSuperHeroToSuperHeroDto(superHero);
+        } catch (Exception ex) {
+            return new SuperHeroDto();
+        }
+    }
+
+    public SuperHeroDto updateSuperHero(String name, String jsonInputToText) {
+        try {
+            SuperHero superHeroForUpdate = null;
+            for (SuperHero superHero : superHeroList) {
+                if (superHero.getName().compareToIgnoreCase(name) == 0) {
+                    Map<String, Object> map = objectMapper.readValue(jsonInputToText, Map.class);
+                    String key = "";
+                    Object value = null;
+                    for (Map.Entry<String, Object> entry : map.entrySet()) {
+                        key = entry.getKey();
+                        value = entry.getValue();
+                    }
+                    System.out.println("Key: " + key);
+                    System.out.println("Value: " + value);
+                    if (key.equals("description_super_power")) {
+                        superHero.setDescription_super_power(String.valueOf(value));
+                        System.out.println("Изменённый герой: " + superHero);
+                    }
+                    superHeroForUpdate = superHero;
+                    System.out.println("Герой кот-й был получен по имени: " + superHeroForUpdate);
+                }
+            }
+            return mapperFromSuperHeroToSuperHeroDto(superHeroForUpdate);
         } catch (Exception ex) {
             return new SuperHeroDto();
         }
